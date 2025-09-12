@@ -3,6 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Cache-Control"
+      content="no-cache, no-store, must-revalidate"
+    />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
     <title>Sri Lankan Fish Chatbot</title>
     <style>
       * {
@@ -93,6 +99,37 @@
         border: 1px solid #e1e5e9;
         border-bottom-left-radius: 5px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .message.assistant .message-content strong {
+        color: #2c3e50;
+        font-weight: 600;
+      }
+
+      .message.assistant .message-content br {
+        margin: 4px 0;
+      }
+
+      .message.assistant .message-content {
+        line-height: 1.6;
+      }
+
+      .message.assistant .message-content strong {
+        display: block;
+        margin: 8px 0 4px 0;
+        font-size: 1.1em;
+      }
+
+      .section-header {
+        margin: 12px 0 6px 0;
+        padding: 4px 0;
+        border-bottom: 1px solid #e0e0e0;
+      }
+
+      .bullet-point {
+        margin: 4px 0;
+        padding-left: 8px;
+        color: #555;
       }
 
       .message-avatar {
@@ -358,17 +395,19 @@
         showTypingIndicator();
 
         try {
-          const response = await fetch("/api/chat/", {
+          console.log("Sending request to: /chatbot/api/chat/");
+          const response = await fetch("/chatbot/api/chat/?v=" + Date.now(), {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
-              "X-CSRFToken": getCookie("csrftoken"),
             },
             body: JSON.stringify({
               message: message,
               session_id: sessionId,
             }),
           });
+
+          console.log("Response status:", response.status);
 
           const data = await response.json();
 
@@ -404,7 +443,27 @@
 
         const messageContent = document.createElement("div");
         messageContent.className = "message-content";
-        messageContent.textContent = content;
+
+        // Process the content to format it properly
+        let formattedContent = content
+          .replace(
+            /\*\*([^:]+):\*\*/g,
+            "<div class='section-header'><strong>$1:</strong></div>"
+          ) // Headers with colons
+          .replace(
+            /\*\*([^:]+)\*\*/g,
+            "<div class='section-header'><strong>$1</strong></div>"
+          ) // Other bold headers
+          .replace(/• /g, "<div class='bullet-point'>• ") // Bullet points
+          .replace(/\n\n/g, "<br><br>") // Double line breaks
+          .replace(/\n/g, "<br>") // Single line breaks
+          .replace(
+            /<div class='bullet-point'>• ([^<]+)<br>/g,
+            "<div class='bullet-point'>• $1</div>"
+          ) // Close bullet points
+          .replace(/^<br>/, ""); // Remove leading break
+
+        messageContent.innerHTML = formattedContent;
 
         if (role === "user") {
           messageDiv.appendChild(messageContent);

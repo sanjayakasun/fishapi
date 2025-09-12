@@ -23,15 +23,31 @@ class OntologyService:
             if os.path.exists(ontology_path):
                 self.graph = Graph()
                 self.graph.parse(ontology_path, format="turtle")
+                print(f"Ontology loaded successfully from {ontology_path}")
             else:
                 print(f"Ontology file not found at {ontology_path}")
+                # Create a fallback graph with basic data
+                self._create_fallback_data()
         except Exception as e:
             print(f"Error loading ontology: {e}")
+            # Create a fallback graph with basic data
+            self._create_fallback_data()
+    
+    def _create_fallback_data(self):
+        """Create fallback data when ontology fails to load"""
+        print("Creating fallback data...")
+        self.graph = Graph()
+        # Add basic fish data directly to the graph
+        for fish_key, fish_info in self.fish_species_mapping.items():
+            fish_id = fish_info["id"]
+            # Add basic triples for each fish
+            self.graph.add((fish_id, self.graph.namespace_manager.namespace('rdfs').label, self.graph.literal(fish_info["vernacular"])))
+            self.graph.add((fish_id, self.graph.namespace_manager.namespace('dwc').scientificName, self.graph.literal(fish_info["scientific"])))
 
     def query_ontology(self, user_query):
         """Query the ontology based on user input"""
         if not self.graph:
-            return "I don't have access to the fish knowledge base at the moment."
+            return self._get_fallback_response(user_query)
         
         # Find which fish is being talked about
         found_fish = self._find_fish_in_query(user_query.lower())
@@ -40,8 +56,41 @@ class OntologyService:
             fish_names = [info["vernacular"] for info in self.fish_species_mapping.values()]
             return f"I can only answer questions about the following fish: {', '.join(fish_names)}. Please ask about one of them."
         
-        # Query the ontology
-        return self._query_fish_information(found_fish, user_query)
+        # Try to query the ontology, fallback to simple response if it fails
+        try:
+            return self._query_fish_information(found_fish, user_query)
+        except Exception as e:
+            print(f"Error querying ontology: {e}")
+            return self._get_fallback_response(user_query, found_fish)
+    
+    def _get_fallback_response(self, user_query, found_fish=None):
+        """Provide fallback response when ontology fails"""
+        if found_fish:
+            fish_info = self.fish_species_mapping.get(found_fish)
+            if fish_info:
+                return f"""**{fish_info['vernacular']}** ({fish_info['scientific']})
+                
+This is one of the seven endemic freshwater fish species of Sri Lanka. Here's what I know:
+
+- **Scientific Name**: {fish_info['scientific']}
+- **Vernacular Name**: {fish_info['vernacular']}
+- **Status**: Endemic to Sri Lanka
+
+For more detailed information about this species, please check our database or ask specific questions about its habitat, conservation status, or physical characteristics."""
+        
+        # If no specific fish found, provide general information
+        fish_names = [info["vernacular"] for info in self.fish_species_mapping.values()]
+        return f"""I can help you learn about Sri Lankan endemic freshwater fish species! 
+
+Here are the fish species I know about:
+{', '.join(fish_names)}
+
+You can ask me specific questions about any of these species, such as:
+- "Tell me about [fish name]"
+- "What is the habitat of [fish name]?"
+- "Show me information about [fish name]"
+
+Please ask about one of the fish species listed above."""
 
     def _find_fish_in_query(self, query):
         """Find which fish species is mentioned in the query"""

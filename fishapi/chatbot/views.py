@@ -8,9 +8,11 @@ from django.views.decorators.http import require_http_methods
 from django.conf import settings
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from django.utils.decorators import method_decorator
 from .models import FishSpecies, ChatSession, ChatMessage
 from .chatbot_service import ChatbotService
 from .ontology_service import OntologyService
+from .simple_chatbot_service import SimpleChatbotService
 
 
 def chat_view(request):
@@ -66,9 +68,11 @@ def species_detail(request, species_id):
 
 
 @api_view(['POST'])
+@csrf_exempt
 def chat_api(request):
     """Handle chat API requests"""
     try:
+        print(f"Chat API called with data: {request.data}")
         data = request.data
         message = data.get('message', '')
         session_id = data.get('session_id')
@@ -92,8 +96,8 @@ def chat_api(request):
             content=message
         )
         
-        # Get chatbot response
-        chatbot_service = ChatbotService()
+        # Get chatbot response using simple service
+        chatbot_service = SimpleChatbotService()
         response = chatbot_service.get_response(message)
         
         # Save assistant response
