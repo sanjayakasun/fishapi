@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sri Lankan Fish Chatbot</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .chat-container {
+        width: 90%;
+        max-width: 800px;
+        height: 80vh;
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+
+      .chat-header {
+        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        color: white;
+        padding: 20px;
+        text-align: center;
+        position: relative;
+      }
+
+      .chat-header h1 {
+        font-size: 24px;
+        margin-bottom: 5px;
+      }
+
+      .chat-header p {
+        opacity: 0.9;
+        font-size: 14px;
+      }
+
+      .fish-icon {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        font-size: 30px;
+      }
+
+      .chat-messages {
+        flex: 1;
+        padding: 20px;
+        overflow-y: auto;
+        background: #f8f9fa;
+      }
+
+      .message {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: flex-start;
+      }
+
+      .message.user {
+        justify-content: flex-end;
+      }
+
+      .message-content {
+        max-width: 70%;
+        padding: 12px 16px;
+        border-radius: 18px;
+        word-wrap: break-word;
+      }
+
+      .message.user .message-content {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border-bottom-right-radius: 5px;
+      }
+
+      .message.assistant .message-content {
+        background: white;
+        color: #333;
+        border: 1px solid #e1e5e9;
+        border-bottom-left-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .message-avatar {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        margin: 0 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+      }
+
+      .message.user .message-avatar {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        order: 1;
+      }
+
+      .message.assistant .message-avatar {
+        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        color: white;
+      }
+
+      .chat-input-container {
+        padding: 20px;
+        background: white;
+        border-top: 1px solid #e1e5e9;
+      }
+
+      .chat-input-form {
+        display: flex;
+        gap: 10px;
+      }
+
+      .chat-input {
+        flex: 1;
+        padding: 12px 16px;
+        border: 2px solid #e1e5e9;
+        border-radius: 25px;
+        outline: none;
+        font-size: 14px;
+        transition: border-color 0.3s;
+      }
+
+      .chat-input:focus {
+        border-color: #667eea;
+      }
+
+      .send-button {
+        padding: 12px 20px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 600;
+        transition: transform 0.2s;
+      }
+
+      .send-button:hover {
+        transform: translateY(-2px);
+      }
+
+      .send-button:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        transform: none;
+      }
+
+      .typing-indicator {
+        display: none;
+        padding: 10px 16px;
+        background: white;
+        border: 1px solid #e1e5e9;
+        border-radius: 18px;
+        border-bottom-left-radius: 5px;
+        margin-bottom: 15px;
+        max-width: 70%;
+      }
+
+      .typing-dots {
+        display: flex;
+        gap: 4px;
+      }
+
+      .typing-dot {
+        width: 8px;
+        height: 8px;
+        background: #999;
+        border-radius: 50%;
+        animation: typing 1.4s infinite;
+      }
+
+      .typing-dot:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+
+      .typing-dot:nth-child(3) {
+        animation-delay: 0.4s;
+      }
+
+      @keyframes typing {
+        0%,
+        60%,
+        100% {
+          transform: translateY(0);
+        }
+        30% {
+          transform: translateY(-10px);
+        }
+      }
+
+      .welcome-message {
+        text-align: center;
+        color: #666;
+        margin: 20px 0;
+        padding: 20px;
+        background: white;
+        border-radius: 10px;
+        border: 1px solid #e1e5e9;
+      }
+
+      .species-suggestions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 15px;
+      }
+
+      .species-tag {
+        padding: 6px 12px;
+        background: #f0f0f0;
+        border-radius: 15px;
+        font-size: 12px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .species-tag:hover {
+        background: #e0e0e0;
+      }
+
+      .error-message {
+        background: #fee;
+        color: #c33;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 10px 0;
+        border: 1px solid #fcc;
+      }
+
+      @media (max-width: 600px) {
+        .chat-container {
+          width: 95%;
+          height: 90vh;
+        }
+
+        .message-content {
+          max-width: 85%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="chat-container">
+      <div class="chat-header">
+        <div class="fish-icon">🐠</div>
+        <h1>Sri Lankan Fish Chatbot</h1>
+        <p>Ask me about endemic freshwater fish species of Sri Lanka</p>
+      </div>
+
+      <div class="chat-messages" id="chatMessages">
+        <div class="welcome-message">
+          <h3>Welcome! 🐠</h3>
+          <p>
+            I can help you learn about Sri Lankan endemic freshwater fish
+            species. Try asking about:
+          </p>
+          <div class="species-suggestions">
+            <span class="species-tag" onclick="askAboutSpecies('Bulath Hapaya')"
+              >Bulath Hapaya</span
+            >
+            <span
+              class="species-tag"
+              onclick="askAboutSpecies('Dankuda Pethiya')"
+              >Dankuda Pethiya</span
+            >
+            <span class="species-tag" onclick="askAboutSpecies('Depulliya')"
+              >Depulliya</span
+            >
+            <span
+              class="species-tag"
+              onclick="askAboutSpecies('Halamal Dandiya')"
+              >Halamal Dandiya</span
+            >
+            <span class="species-tag" onclick="askAboutSpecies('Lethiththaya')"
+              >Lethiththaya</span
+            >
+            <span
+              class="species-tag"
+              onclick="askAboutSpecies('Pathirana Salaya')"
+              >Pathirana Salaya</span
+            >
+            <span class="species-tag" onclick="askAboutSpecies('Thal Kossa')"
+              >Thal Kossa</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="typing-indicator" id="typingIndicator">
+        <div class="typing-dots">
+          <div class="typing-dot"></div>
+          <div class="typing-dot"></div>
+          <div class="typing-dot"></div>
+        </div>
+      </div>
+
+      <div class="chat-input-container">
+        <form class="chat-input-form" id="chatForm">
+          <input
+            type="text"
+            class="chat-input"
+            id="chatInput"
+            placeholder="Ask me about Sri Lankan fish..."
+            autocomplete="off"
+          />
+          <button type="submit" class="send-button" id="sendButton">
+            Send
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      let sessionId = null;
+      const chatMessages = document.getElementById("chatMessages");
+      const chatForm = document.getElementById("chatForm");
+      const chatInput = document.getElementById("chatInput");
+      const sendButton = document.getElementById("sendButton");
+      const typingIndicator = document.getElementById("typingIndicator");
+
+      // Generate session ID if not exists
+      if (!sessionId) {
+        sessionId =
+          "session_" +
+          Date.now() +
+          "_" +
+          Math.random().toString(36).substr(2, 9);
+      }
+
+      chatForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const message = chatInput.value.trim();
+        if (!message) return;
+
+        // Add user message to chat
+        addMessage("user", message);
+        chatInput.value = "";
+        sendButton.disabled = true;
+        showTypingIndicator();
+
+        try {
+          const response = await fetch("/api/chat/", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "X-CSRFToken": getCookie("csrftoken"),
+            },
+            body: JSON.stringify({
+              message: message,
+              session_id: sessionId,
+            }),
+          });
+
+          const data = await response.json();
+
+          if (response.ok) {
+            hideTypingIndicator();
+            addMessage("assistant", data.response);
+          } else {
+            hideTypingIndicator();
+            addMessage(
+              "assistant",
+              "Sorry, I encountered an error. Please try again."
+            );
+          }
+        } catch (error) {
+          hideTypingIndicator();
+          addMessage(
+            "assistant",
+            "Sorry, I encountered an error. Please try again."
+          );
+        } finally {
+          sendButton.disabled = false;
+          chatInput.focus();
+        }
+      });
+
+      function addMessage(role, content) {
+        const messageDiv = document.createElement("div");
+        messageDiv.className = `message ${role}`;
+
+        const avatar = document.createElement("div");
+        avatar.className = "message-avatar";
+        avatar.textContent = role === "user" ? "👤" : "🐠";
+
+        const messageContent = document.createElement("div");
+        messageContent.className = "message-content";
+        messageContent.textContent = content;
+
+        if (role === "user") {
+          messageDiv.appendChild(messageContent);
+          messageDiv.appendChild(avatar);
+        } else {
+          messageDiv.appendChild(avatar);
+          messageDiv.appendChild(messageContent);
+        }
+
+        chatMessages.appendChild(messageDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+
+      function showTypingIndicator() {
+        typingIndicator.style.display = "block";
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+
+      function hideTypingIndicator() {
+        typingIndicator.style.display = "none";
+      }
+
+      function askAboutSpecies(speciesName) {
+        chatInput.value = `Tell me about ${speciesName}`;
+        chatForm.dispatchEvent(new Event("submit"));
+      }
+
+      function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== "") {
+          const cookies = document.cookie.split(";");
+          for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            if (cookie.substring(0, name.length + 1) === name + "=") {
+              cookieValue = decodeURIComponent(
+                cookie.substring(name.length + 1)
+              );
+              break;
+            }
+          }
+        }
+        return cookieValue;
+      }
+
+      // Focus input on load
+      chatInput.focus();
+    </script>
+  </body>
+</html>
