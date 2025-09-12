@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-!mlzc^k&cukk(ajku^hf9#6=l1n+(=s#6mrqjyeh!b2fek9)z4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.1.189', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['192.168.1.89', 'localhost', '127.0.0.1', '0.0.0.0']
 
 
 # Application definition
@@ -127,3 +127,26 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# CORS settings for allowing requests from other devices
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = True
+
+# Additional CORS settings for development
+CORS_ALLOWED_ORIGINS = [
+    "http://192.168.1.89:8000",
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+]
+
+CORS_ALLOW_HEADERS = [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+]
