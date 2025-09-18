@@ -83,16 +83,20 @@ def create_feature_images(img_path, heatmap, threshold=0.5):
     )
     contours, _ = cv2.findContours(binary_mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
-    outline_img = np.zeros_like(original_img)
-    cv2.drawContours(outline_img, contours, -1, (0, 255, 0), 3)
+    # -------------------------------
+    # 1. Feature Outlines (original + contours)
+    # -------------------------------
+    feature_outlines = original_img.copy()
+    cv2.drawContours(feature_outlines, contours, -1, (0, 255, 0), 2)  # green contours
 
-    # Overlay outlines
-    result_img = cv2.addWeighted(original_img, 1.0, outline_img, 1.0, 0)
+    # -------------------------------
+    # 2. Heatmap with Outlines (heatmap overlay + contours)
+    # -------------------------------
+    overlay = cv2.addWeighted(original_img, 0.6, heatmap_colored, 0.4, 0)
+    heatmap_with_outlines = overlay.copy()
+    cv2.drawContours(heatmap_with_outlines, contours, -1, (0, 255, 0), 1)
 
-    # Final combined (heatmap + outlines)
-    superimposed_img = cv2.addWeighted(result_img, 0.7, heatmap_colored, 0.3, 0)
-
-    return original_img, heatmap_colored, outline_img, superimposed_img
+    return original_img, heatmap_colored, feature_outlines, heatmap_with_outlines
 
 
 # ================================
@@ -147,7 +151,8 @@ def predict_image(request):
     return Response({
         "prediction": class_name,
         "confidence": round(confidence, 3),
-        "heatmap_image": f"/media/{overlay_filename}"
+        "heatmap_image": f"/media/{overlay_filename}",
+        "original_image": f"/media/{temp_filename}"
     })
 
 
@@ -155,7 +160,7 @@ def predict_image(request):
 # API: Explore More (all 4 images)
 # ================================
 @api_view(['POST'])
-def explore_more(request):
+def explore_more_Grad_CAM(request):
     img_path = request.data.get("image_path")
     if not img_path:
         return Response({"error": "No image path provided"}, status=400)
