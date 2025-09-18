@@ -13,7 +13,7 @@ from django.conf import settings
 import time
 
 # Load model
-model_path = os.path.join(os.path.dirname(__file__), 'best_fish_classifier.h5')
+model_path = os.path.join(os.path.dirname(__file__), 'best_model.keras')
 model = load_model(model_path)
 
 # Class labels
