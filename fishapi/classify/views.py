@@ -11,6 +11,8 @@ import uuid
 from django.core.files.storage import default_storage
 from django.conf import settings
 import time
+from django.http import JsonResponse
+from rdflib import Graph, Namespace
 
 # Load model
 model_path = os.path.join(os.path.dirname(__file__), 'best_finetuned_stage2.keras')
@@ -21,6 +23,16 @@ class_names = [
     "Bulath_hapaya", "Dankuda_pethiya", "Depulliya",
     "Halamal_dandiya", "Lethiththaya", "Pathirana_salaya", "Thal_kossa"
 ]
+# Load ontology once at startup
+g = Graph()
+g.parse("fish_ontology.ttl", format="turtle")
+
+# Common namespaces
+DWc = Namespace("http://rs.tdwg.org/dwc/terms/")
+IUCN = Namespace("http://iucn.org/ontology/")
+RDFS = Namespace("http://www.w3.org/2000/01/rdf-schema#")
+EX = Namespace("http://example.org/sri-lankan-fish-ontology#")
+WD = Namespace("http://www.wikidata.org/entity/")
 
 # ================================
 # GradCAM Utilities
@@ -87,7 +99,7 @@ def create_feature_images(img_path, heatmap, threshold=0.5):
     # 1. Feature Outlines (original + contours)
     # -------------------------------
     feature_outlines = original_img.copy()
-    cv2.drawContours(feature_outlines, contours, -1, (0, 255, 0), 2)  # green contours
+    cv2.drawContours(feature_outlines, contours, -1, (0, 255, 0), 1)  # green contours
 
     # -------------------------------
     # 2. Heatmap with Outlines (heatmap overlay + contours)
@@ -195,3 +207,35 @@ def explore_more_Grad_CAM(request):
         paths[label] = f"/media/{fname}"
 
     return Response(paths)
+
+def get_fish_details(request, species_id):
+    """
+    species_id example: 'Q2249852'
+    URL: /api/fish/Q2249852/
+    """
+    subject = WD[species_id]
+
+    data = {}
+
+    # Query ontology triples
+    label = g.value(subject, RDFS.label)
+    sci_name = g.value(subject, DWc.scientificName)
+    vernacular = list(g.objects(subject, DWc.vernacularName))
+    family = g.value(subject, DWc.family)
+    genus = g.value(subject, DWc.genus)
+    status = g.value(subject, IUCN.threatStatus)
+    description = g.value(subject, EX.speciesDescription)
+    image_url = g.value(subject, EX.imageURL)
+
+    # Build JSON
+    data["id"] = species_id
+    data["label"] = str(label) if label else None
+    data["scientificName"] = str(sci_name) if sci_name else None
+    data["vernacularNames"] = [str(v) for v in vernacular]
+    data["family"] = str(family) if family else None
+    data["genus"] = str(genus) if genus else None
+    data["iucnStatus"] = str(status) if status else None
+    data["description"] = str(description) if description else None
+    data["imageURL"] = str(image_url) if image_url else None
+
+    return JsonResponse(data)

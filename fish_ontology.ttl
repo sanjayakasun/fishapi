@@ -1,0 +1,371 @@
+# --- PREFIXES ---
+@prefix : <http://example.org/sri-lankan-fish-ontology#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix dwc: <http://rs.tdwg.org/dwc/terms/>.
+@prefix iucn: <http://iucn.org/ontology/>.
+@prefix obo: <http://purl.obolibrary.org/obo/>.
+@prefix envo: <http://purl.obolibrary.org/obo/ENVO_>.
+@prefix pato: <http://purl.obolibrary.org/obo/PATO_>.
+@prefix eco: <http://purl.obolibrary.org/obo/ECO_>.
+@prefix uberon: <http://purl.obolibrary.org/obo/UBERON_>.
+@prefix go: <http://purl.obolibrary.org/obo/GO_>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix wd: <http://www.wikidata.org/entity/>.
+
+# --- ONTOLOGY METADATA ---
+<http://example.org/sri-lankan-fish-ontology> rdf:type owl:Ontology ;
+    rdfs:label "Sri Lankan Endemic Freshwater Fish Ontology" ;
+    rdfs:comment "An ontology describing seven endemic freshwater fish species of Sri Lanka, their characteristics, habitats, and conservation status, based on the provided research report.".
+
+# --- INDIVIDUALS ---
+
+# 1. Pethia nigrofasciata (Bulath hapaya)
+wd:Q2249852 rdf:type owl:NamedIndividual ;
+    rdfs:label "Pethia nigrofasciata" ;
+    dwc:scientificName "Pethia nigrofasciata" ;
+    dwc:vernacularName "Bulath Hapaya"@si , "Black Ruby Barb"@en , "Purplehead Barb"@en ;
+    dwc:family "Cyprinidae" ;
+    dwc:genus "Pethia" ;
+    obo:IAO_0000118 "Puntius nigrofasciatus" ;
+    iucn:threatStatus iucn:Vulnerable ;
+    dwc:occurrenceStatus "Endemic to Sri Lanka" ;
+    obo:RO_0002451 envo:01000222 ;
+    obo:RO_0002228 envo:00002262 , envo:00000041 ;
+    obo:RO_0002234 :HabitatDestruction_MiniHydro , :OverCollection_AquariumTrade ;
+    eco:EC_0000171 "Aquarium trade" ;
+    :maxSizeCm "6.5" ;
+    :maxSizeInches "2.6" ;
+    :bodyShape "Laterally compressed, deep body" ;
+    :bodyColor "Silver to golden base with black vertical bars" ;
+    :dorsalFin "Single dorsal fin with 8-9 rays" ;
+    :analFin "Single anal fin with 6-7 rays" ;
+    :caudalFin "Forked caudal fin" ;
+    :pectoralFins "Paired pectoral fins" ;
+    :pelvicFins "Paired pelvic fins" ;
+    :scales "Large cycloid scales" ;
+    :lateralLine "Complete lateral line with 20-24 scales" ;
+    :mouth "Small, terminal mouth" ;
+    :eyes "Large, prominent eyes" ;
+    :barbels "No barbels present" ;
+    :sexualDimorphism "Males more colorful with deeper body, females larger" ;
+    :breedingColors "Males develop intense red coloration on head and body" ;
+    :imageURL "https://example.com/images/bulath_hapaya.jpg" ;
+    :imageDescription "Adult male showing breeding coloration with black vertical bars" ;
+    :morphologyNotes "Distinctive black vertical bars distinguish this species from other barbs" ;
+    :specificLocations "Kalu Ganga basin, Kelani Ganga basin, Mahaweli Ganga basin" ;
+    :riverBasins "Kalu, Kelani, Mahaweli" ;
+    :districts "Kalutara, Colombo, Gampaha, Kegalle, Ratnapura, Kandy, Matale" ;
+    :protectedAreas "Sinharaja Forest Reserve, Peak Wilderness Sanctuary, Knuckles Forest Reserve" ;
+    :observationSites "Kalu Ganga tributaries near Kalutara, Kelani Ganga tributaries near Avissawella, Mahaweli Ganga tributaries near Kandy" ;
+    :habitatType "Forest streams with clear, fast-flowing water" ;
+    :altitudeRange "50-800 meters above sea level" ;
+    :waterConditions "pH 6.0-6.5, temperature 22-26°C, well-oxygenated water" ;
+    :speciesDescription "Bulath Hapaya (Pethia nigrofasciata) is a small, colorful freshwater fish endemic to Sri Lanka. This species is easily identified by its silver to golden base coloration with distinctive black vertical bars running along its body. Males are particularly striking during breeding season when they develop intense red coloration on their head and body. The fish has a laterally compressed, deep body shape with large prominent eyes and a small terminal mouth. It typically grows to a maximum size of 6.5 cm and inhabits forest streams with clear, fast-flowing water. The species is found in the Kalu, Kelani, and Mahaweli river basins across several districts including Kalutara, Colombo, and Kandy. Bulath Hapaya is classified as Vulnerable by the IUCN due to habitat destruction from mini-hydro projects and over-collection for the aquarium trade. It feeds primarily on filamentous algae and detritus, making it an important part of the forest stream ecosystem.".
+
+:HabitatDestruction_MiniHydro rdf:type owl:NamedIndividual ;
+    rdfs:label "Habitat destruction from private mini-hydro projects".
+
+:OverCollection_AquariumTrade rdf:type owl:NamedIndividual ;
+    rdfs:label "Over-collection for the aquarium export trade".
+
+envo:01000222 rdfs:label "Forest Stream Habitat for P. nigrofasciata" ;
+    envo:00000873 [ rdf:type envo:01000322 ; rdfs:label "pH 6.0-6.5" ] ,
+                   [ rdf:type envo:01000323 ; rdfs:label "water hardness 5-12 dGH" ] ,
+                   [ rdf:type envo:01000324 ; rdfs:label "temperature 22-26 °C" ].
+
+# 2. Dawkinsia srilankensis (Dankuda pethiya)
+wd:Q28599176 rdf:type owl:NamedIndividual ;
+    rdfs:label "Dawkinsia srilankensis" ;
+    dwc:scientificName "Dawkinsia srilankensis" ;
+    dwc:vernacularName "Dankuda Pethiya"@si , "Blotched Filamented Barb"@en ;
+    dwc:family "Cyprinidae" ;
+    dwc:genus "Dawkinsia" ;
+    obo:IAO_0000118 "Puntius srilankensis" ;
+    iucn:threatStatus iucn:Endangered ;
+    dwc:occurrenceStatus "Endemic to Sri Lanka" ;
+    obo:RO_0002451 envo:00000020 ;
+    obo:RO_0002234 :Pollution_MineTailings , envo:00002011 , :Capture_AquariumTrade ;
+    obo:RO_0002233 :CaptiveBreeding_DSrilankensis ;
+    :maxSizeCm "8.0" ;
+    :maxSizeInches "3.1" ;
+    :bodyShape "Elongate, laterally compressed body" ;
+    :bodyColor "Silver base with dark blotches and spots" ;
+    :dorsalFin "Single dorsal fin with 9-10 rays" ;
+    :analFin "Single anal fin with 7-8 rays" ;
+    :caudalFin "Forked caudal fin" ;
+    :pectoralFins "Paired pectoral fins" ;
+    :pelvicFins "Paired pelvic fins" ;
+    :scales "Medium cycloid scales" ;
+    :lateralLine "Complete lateral line with 25-28 scales" ;
+    :mouth "Small, terminal mouth" ;
+    :eyes "Medium-sized eyes" ;
+    :barbels "No barbels present" ;
+    :sexualDimorphism "Males develop filamentous extensions on dorsal fin" ;
+    :breedingColors "Males show enhanced coloration during breeding" ;
+    :imageURL "https://example.com/images/dankuda_pethiya.jpg" ;
+    :imageDescription "Adult showing characteristic dark blotches and filamentous dorsal fin extensions" ;
+    :morphologyNotes "Named for its distinctive blotched pattern and filamentous dorsal fin extensions" ;
+    :specificLocations "Mahaweli Ganga basin, Kalu Ganga basin, Gin Ganga basin" ;
+    :riverBasins "Mahaweli, Kalu, Gin" ;
+    :districts "Kandy, Matale, Nuwara Eliya, Kalutara, Galle, Matara" ;
+    :protectedAreas "Horton Plains National Park, Peak Wilderness Sanctuary, Sinharaja Forest Reserve" ;
+    :observationSites "Mahaweli Ganga tributaries near Kandy, Kalu Ganga tributaries near Kalutara, Gin Ganga tributaries near Galle" ;
+    :habitatType "Riverine habitats with moderate flow" ;
+    :altitudeRange "100-1200 meters above sea level" ;
+    :waterConditions "pH 6.5-7.0, temperature 20-25°C, moderate flow" ;
+    :speciesDescription "Dankuda Pethiya (Dawkinsia srilankensis) is an endangered freshwater fish endemic to Sri Lanka, known for its distinctive blotched pattern and filamentous dorsal fin extensions. This species has a silver base coloration with dark blotches and spots scattered across its body. Males develop impressive filamentous extensions on their dorsal fin, which are particularly prominent during breeding season. The fish has an elongate, laterally compressed body and can grow up to 8.0 cm in length. It inhabits riverine habitats with moderate flow in the Mahaweli, Kalu, and Gin river basins. The species is found in districts including Kandy, Matale, and Kalutara, and can be observed in protected areas like Horton Plains National Park and Sinharaja Forest Reserve. Dankuda Pethiya faces significant threats from pollution from mine tailings, agrochemical pollution, and capture for the aquarium trade. Conservation efforts include captive breeding programs at the Dehiwala National Zoological Gardens.".
+
+:Pollution_MineTailings rdf:type owl:NamedIndividual ;
+    rdfs:label "Pollution from upstream mine tailings".
+
+envo:00002011 rdfs:label "Agrochemical pollution".
+
+:Capture_AquariumTrade rdf:type owl:NamedIndividual ;
+    rdfs:label "Capture for the aquarium trade".
+
+:CaptiveBreeding_DSrilankensis rdf:type go:0040026 ;
+    rdfs:label "Captive breeding of D. srilankensis" ;
+    obo:BFO_0000052 "Dehiwala National Zoological Gardens" ;
+    obo:RO_0002233 "Conservation of D. srilankensis".
+
+# 3. Pethia cumingii (Depulliya)
+wd:Q1518816 rdf:type owl:NamedIndividual ;
+    rdfs:label "Pethia cumingii" ;
+    dwc:scientificName "Pethia cumingii" ;
+    dwc:vernacularName "Depulliya"@si , "Two-spot Barb"@en , "Cuming's Barb"@en ;
+    dwc:family "Cyprinidae" ;
+    dwc:genus "Pethia" ;
+    iucn:threatStatus iucn:Endangered ;
+    dwc:occurrenceStatus "Endemic to Sri Lanka" ;
+    obo:RO_0002451 envo:00000020 ;
+    obo:IAO_0000136 obo:OBI_0000667 ;
+    obo:RO_0002468 wd:Q7171589 ;
+    :maxSizeCm "5.5" ;
+    :maxSizeInches "2.2" ;
+    :bodyShape "Laterally compressed, moderately deep body" ;
+    :bodyColor "Silver base with two distinct black spots" ;
+    :dorsalFin "Single dorsal fin with 8-9 rays" ;
+    :analFin "Single anal fin with 6-7 rays" ;
+    :caudalFin "Forked caudal fin" ;
+    :pectoralFins "Paired pectoral fins" ;
+    :pelvicFins "Paired pelvic fins" ;
+    :scales "Medium cycloid scales" ;
+    :lateralLine "Complete lateral line with 22-25 scales" ;
+    :mouth "Small, terminal mouth" ;
+    :eyes "Large, prominent eyes" ;
+    :barbels "No barbels present" ;
+    :sexualDimorphism "Males smaller and more colorful than females" ;
+    :breedingColors "Males develop red coloration on fins and body" ;
+    :imageURL "https://example.com/images/depulliya.jpg" ;
+    :imageDescription "Adult showing characteristic two black spots on body" ;
+    :morphologyNotes "Named 'Depulliya' for its two distinctive black spots" ;
+    :specificLocations "Kelani Ganga basin, Mahaweli Ganga basin, Kalu Ganga basin" ;
+    :riverBasins "Kelani, Mahaweli, Kalu" ;
+    :districts "Colombo, Gampaha, Kegalle, Ratnapura, Kandy, Matale, Kalutara" ;
+    :protectedAreas "Sinharaja Forest Reserve, Peak Wilderness Sanctuary, Knuckles Forest Reserve" ;
+    :observationSites "Kelani Ganga tributaries near Avissawella, Mahaweli Ganga tributaries near Kandy, Kalu Ganga tributaries near Kalutara" ;
+    :habitatType "Small forest streams and tributaries" ;
+    :altitudeRange "100-900 meters above sea level" ;
+    :waterConditions "pH 6.0-6.8, temperature 22-26°C, clear water" ;
+    :speciesDescription "Depulliya (Pethia cumingii) is an endangered freshwater fish endemic to Sri Lanka, easily recognized by its two distinctive black spots on a silver base. This small fish typically grows to 5.5 cm and has a laterally compressed, moderately deep body. Males are smaller and more colorful than females, developing red coloration on their fins and body during breeding season. The species inhabits small forest streams and tributaries in the Kelani, Mahaweli, and Kalu river basins. It can be found in districts including Colombo, Gampaha, and Kandy, often in protected areas like Sinharaja Forest Reserve and Peak Wilderness Sanctuary. Depulliya is threatened by habitat destruction and is classified as Endangered by the IUCN. The species is named 'Depulliya' (meaning 'two spots' in Sinhala) for its characteristic two black spots, which distinguish it from other barb species. It plays an important role in the forest stream ecosystem as a small but significant component of the aquatic food web.".
+
+wd:Q7171589 rdf:type owl:NamedIndividual ;
+    rdfs:label "Pethia reval" ;
+    dcterms:replaces "Red-finned population formerly classified as Pethia cumingii" ;
+    dwc:vernacularName "Rathuwaral depulliya"@si.
+
+# 4. Rasboroides vaterifloris (Halamal dandiya)
+wd:Q269931 rdf:type owl:NamedIndividual ;
+    rdfs:label "Rasboroides vaterifloris" ;
+    dwc:scientificName "Rasboroides vaterifloris" ;
+    dwc:vernacularName "Halamal Dandiya"@si , "Pearly Rasbora"@en , "Fire Rasbora"@en ;
+    dwc:family "Danionidae" ;
+    dwc:genus "Rasboroides" ;
+    iucn:threatStatus iucn:Endangered ;
+    dwc:occurrenceStatus "Endemic to Sri Lanka" ;
+    owl:sameAs wd:Q20720781 ;
+    obo:RO_0002451 envo:00000020 ;
+    obo:RO_0002228 envo:00000041 ;
+    obo:RO_0002234 :HabitatDestruction_SandExcavationDeforestation ;
+    :maxSizeCm "4.5" ;
+    :maxSizeInches "1.8" ;
+    :bodyShape "Laterally compressed, deep body" ;
+    :bodyColor "Pearly silver with iridescent scales" ;
+    :dorsalFin "Single dorsal fin with 8-9 rays" ;
+    :analFin "Single anal fin with 7-8 rays" ;
+    :caudalFin "Forked caudal fin" ;
+    :pectoralFins "Paired pectoral fins" ;
+    :pelvicFins "Paired pelvic fins" ;
+    :scales "Large, iridescent cycloid scales" ;
+    :lateralLine "Incomplete lateral line with 6-8 scales" ;
+    :mouth "Small, terminal mouth" ;
+    :eyes "Large, prominent eyes" ;
+    :barbels "No barbels present" ;
+    :sexualDimorphism "Males more colorful with deeper body" ;
+    :breedingColors "Males develop intense red coloration on body and fins" ;
+    :imageURL "https://example.com/images/halamal_dandiya.jpg" ;
+    :imageDescription "Adult showing pearly iridescent scales and characteristic body shape" ;
+    :morphologyNotes "Named for its pearly appearance and distinctive iridescent scales" ;
+    :specificLocations "Kalu Ganga basin, Bentota Ganga basin, Gin Ganga basin" ;
+    :riverBasins "Kalu, Bentota, Gin" ;
+    :districts "Kalutara, Galle, Matara, Hambantota" ;
+    :protectedAreas "Sinharaja Forest Reserve, Kanneliya Forest Reserve, Hiyare Forest Reserve" ;
+    :observationSites "Kalu Ganga tributaries near Kalutara, Bentota Ganga tributaries near Bentota, Gin Ganga tributaries near Galle" ;
+    :habitatType "Small forest streams with sandy bottoms" ;
+    :altitudeRange "50-600 meters above sea level" ;
+    :waterConditions "pH 6.2-6.8, temperature 23-27°C, slow to moderate flow" ;
+    :speciesDescription "Halamal Dandiya (Rasboroides vaterifloris) is an endangered freshwater fish endemic to Sri Lanka, renowned for its pearly appearance and distinctive iridescent scales. This beautiful fish has a laterally compressed, deep body with a silver base that shimmers with iridescent scales, giving it a pearly appearance. Males are more colorful with deeper bodies and develop intense red coloration on their body and fins during breeding season. The species typically grows to 4.5 cm and inhabits small forest streams with sandy bottoms in the Kalu, Bentota, and Gin river basins. It can be found in districts including Kalutara, Galle, and Matara, often in protected areas like Sinharaja Forest Reserve and Kanneliya Forest Reserve. Halamal Dandiya is threatened by habitat destruction from sand excavation and deforestation. The species is named for its pearly appearance ('Halamal' means 'pearly' in Sinhala) and is also known as the Pearly Rasbora or Fire Rasbora due to its striking coloration. It feeds on detritus and insects, playing an important role in the forest stream ecosystem.".
+
+wd:Q20720781 rdfs:label "Rasboroides nigromarginatus".
+
+:HabitatDestruction_SandExcavationDeforestation rdf:type owl:NamedIndividual ;
+    rdfs:label "Habitat destruction (sand excavation, deforestation)".
+
+# 5. Puntius titteya (Lethiththaya)
+wd:Q637598 rdf:type owl:NamedIndividual ;
+    rdfs:label "Puntius titteya" ;
+    dwc:scientificName "Puntius titteya" ;
+    dwc:vernacularName "Lay titteya"@si , "Cherry Barb"@en ;
+    dwc:family "Cyprinidae" ;
+    dwc:genus "Puntius" ;
+    obo:IAO_0000118 "Capoeta titteya" ;
+    iucn:threatStatus iucn:Vulnerable ;
+    dwc:occurrenceStatus "Endemic to Sri Lanka" ;
+    obo:RO_0002451 [ rdf:type envo:00000020 ; dwc:location "Kelani to Nilwala river basins" ] ;
+    obo:RO_0002234 :HabitatLoss_HydroPollutionDeforestation , :SelectiveOverexploitation_PTitteya ;
+    eco:EC_0000171 "Ornamental fish trade" ;
+    :maxSizeCm "5.0" ;
+    :maxSizeInches "2.0" ;
+    :bodyShape "Laterally compressed, moderately deep body" ;
+    :bodyColor "Silver base with cherry-red coloration in males" ;
+    :dorsalFin "Single dorsal fin with 8-9 rays" ;
+    :analFin "Single anal fin with 6-7 rays" ;
+    :caudalFin "Forked caudal fin" ;
+    :pectoralFins "Paired pectoral fins" ;
+    :pelvicFins "Paired pelvic fins" ;
+    :scales "Medium cycloid scales" ;
+    :lateralLine "Complete lateral line with 20-24 scales" ;
+    :mouth "Small, terminal mouth" ;
+    :eyes "Large, prominent eyes" ;
+    :barbels "No barbels present" ;
+    :sexualDimorphism "Males develop intense cherry-red coloration" ;
+    :breedingColors "Males show brilliant cherry-red body and fins" ;
+    :imageURL "https://example.com/images/lethiththaya.jpg" ;
+    :imageDescription "Adult male showing characteristic cherry-red coloration" ;
+    :morphologyNotes "Named 'Cherry Barb' for the male's distinctive cherry-red coloration" ;
+    :specificLocations "Kelani Ganga basin, Nilwala Ganga basin, Kalu Ganga basin" ;
+    :riverBasins "Kelani, Nilwala, Kalu" ;
+    :districts "Colombo, Gampaha, Kegalle, Ratnapura, Matara, Galle, Kalutara" ;
+    :protectedAreas "Sinharaja Forest Reserve, Peak Wilderness Sanctuary, Kanneliya Forest Reserve" ;
+    :observationSites "Kelani Ganga tributaries near Avissawella, Nilwala Ganga tributaries near Matara, Kalu Ganga tributaries near Kalutara" ;
+    :habitatType "Forest streams and small rivers" ;
+    :altitudeRange "50-800 meters above sea level" ;
+    :waterConditions "pH 6.0-6.5, temperature 22-26°C, clear, well-oxygenated water" ;
+    :speciesDescription "Lethiththaya (Puntius titteya), also known as the Cherry Barb, is a vulnerable freshwater fish endemic to Sri Lanka, famous for its brilliant cherry-red coloration in males. This species has a laterally compressed, moderately deep body with a silver base that transforms into stunning cherry-red coloration in males during breeding season. Females are typically silver with less intense coloration. The fish grows to a maximum size of 5.0 cm and inhabits forest streams and small rivers in the Kelani, Nilwala, and Kalu river basins. It can be found in districts including Colombo, Matara, and Kalutara, often in protected areas like Sinharaja Forest Reserve and Kanneliya Forest Reserve. Lethiththaya is threatened by hydroelectric projects, pollution, deforestation, and selective overexploitation for the ornamental fish trade. The species is particularly vulnerable because the most colorful individuals (males) are selectively removed from the wild, leading to genetic impoverishment. It plays an important role in the forest stream ecosystem and is highly valued in the aquarium trade for its striking appearance.".
+
+:HabitatLoss_HydroPollutionDeforestation rdf:type owl:NamedIndividual ;
+    rdfs:label "Hydroelectric projects, pollution, deforestation".
+
+:SelectiveOverexploitation_PTitteya rdf:type eco:0000213 ;
+    rdfs:label "Selective overexploitation of Puntius titteya" ;
+    obo:RO_0002573 "Selective removal of most colorful individuals" ;
+    obo:RO_0002566 "Genetic impoverishment".
+
+# 6. Devario pathirana (Pathirana salaya)
+wd:Q2917966 rdf:type owl:NamedIndividual ;
+    rdfs:label "Devario pathirana" ;
+    dwc:scientificName "Devario pathirana" ;
+    dwc:vernacularName "Pathirana Salaya"@si , "Barred Danio"@en ;
+    dwc:family "Danionidae" ;
+    dwc:genus "Devario" ;
+    obo:IAO_0000118 "Danio pathirana" ;
+    iucn:threatStatus iucn:Endangered ;
+    dwc:occurrenceStatus "Critically endangered (in wild)" , "Common (in captivity)" ;
+    dwc:establishmentMeans <http://rs.tdwg.org/dwcem/values/dwcem002> ;
+    obo:RO_0002451 envo:01000222 ;
+    obo:RO_0002234 :HabitatDestruction_MiniHydro ;
+    :maxSizeCm "7.0" ;
+    :maxSizeInches "2.8" ;
+    :bodyShape "Elongate, laterally compressed body" ;
+    :bodyColor "Silver base with dark horizontal bars" ;
+    :dorsalFin "Single dorsal fin with 9-10 rays" ;
+    :analFin "Single anal fin with 7-8 rays" ;
+    :caudalFin "Forked caudal fin" ;
+    :pectoralFins "Paired pectoral fins" ;
+    :pelvicFins "Paired pelvic fins" ;
+    :scales "Medium cycloid scales" ;
+    :lateralLine "Complete lateral line with 30-35 scales" ;
+    :mouth "Small, terminal mouth" ;
+    :eyes "Large, prominent eyes" ;
+    :barbels "No barbels present" ;
+    :sexualDimorphism "Males more colorful with deeper body" ;
+    :breedingColors "Males develop enhanced barring pattern" ;
+    :imageURL "https://example.com/images/pathirana_salaya.jpg" ;
+    :imageDescription "Adult showing characteristic horizontal barring pattern" ;
+    :morphologyNotes "Named 'Barred Danio' for its distinctive horizontal barring pattern" ;
+    :specificLocations "Kalu Ganga basin, Kelani Ganga basin, Mahaweli Ganga basin" ;
+    :riverBasins "Kalu, Kelani, Mahaweli" ;
+    :districts "Kalutara, Colombo, Gampaha, Kegalle, Ratnapura, Kandy, Matale" ;
+    :protectedAreas "Sinharaja Forest Reserve, Peak Wilderness Sanctuary, Knuckles Forest Reserve" ;
+    :observationSites "Kalu Ganga tributaries near Kalutara, Kelani Ganga tributaries near Avissawella, Mahaweli Ganga tributaries near Kandy" ;
+    :habitatType "Forest streams with rocky substrates" ;
+    :altitudeRange "100-1000 meters above sea level" ;
+    :waterConditions "pH 6.0-6.5, temperature 20-25°C, fast-flowing, well-oxygenated water" ;
+    :speciesDescription "Pathirana Salaya (Devario pathirana), also known as the Barred Danio, is an endangered freshwater fish endemic to Sri Lanka, distinguished by its horizontal barring pattern. This species has an elongate, laterally compressed body with a silver base and dark horizontal bars running across its body. Males are more colorful with deeper bodies and develop enhanced barring patterns during breeding season. The fish can grow up to 7.0 cm and inhabits forest streams with rocky substrates in the Kalu, Kelani, and Mahaweli river basins. It can be found in districts including Kalutara, Colombo, and Kandy, often in protected areas like Sinharaja Forest Reserve and Peak Wilderness Sanctuary. Pathirana Salaya is critically endangered in the wild but common in captivity, with its establishment means being primarily through captive breeding programs. The species is threatened by habitat destruction from mini-hydro projects. It plays an important role in the forest stream ecosystem and is named 'Barred Danio' for its distinctive horizontal barring pattern, which helps it blend into its rocky stream environment.".
+
+# 7. Belontia signata (Thal kossa)
+wd:Q2703814 rdf:type owl:NamedIndividual ;
+    rdfs:label "Belontia signata" ;
+    dwc:scientificName "Belontia signata" ;
+    dwc:vernacularName "Thal Kossa"@si , "Ceylonese Combtail"@en ;
+    dwc:family "Osphronemidae" ;
+    dwc:genus "Belontia" ;
+    obo:IAO_0000118 "Polyacanthus signatus" ;
+    iucn:threatStatus iucn:Vulnerable ;
+    dwc:occurrenceStatus "Endemic to Sri Lanka" ;
+    obo:RO_0002451 envo:00000020 ;
+    obo:RO_0002180 uberon:0011210 ;
+    obo:RO_0002573 pato:0000620 ;
+    :maxSizeCm "12.0" ;
+    :maxSizeInches "4.7" ;
+    :bodyShape "Laterally compressed, deep body" ;
+    :bodyColor "Brown to olive base with dark vertical bars" ;
+    :dorsalFin "Single dorsal fin with 12-14 rays" ;
+    :analFin "Single anal fin with 8-10 rays" ;
+    :caudalFin "Rounded caudal fin with filamentous extensions" ;
+    :pectoralFins "Paired pectoral fins" ;
+    :pelvicFins "Paired pelvic fins with filamentous extensions" ;
+    :scales "Large cycloid scales" ;
+    :lateralLine "Incomplete lateral line" ;
+    :mouth "Small, terminal mouth" ;
+    :eyes "Large, prominent eyes" ;
+    :barbels "No barbels present" ;
+    :sexualDimorphism "Males larger with more elaborate fin extensions" ;
+    :breedingColors "Males develop enhanced coloration and fin extensions" ;
+    :imageURL "https://example.com/images/thal_kossa.jpg" ;
+    :imageDescription "Adult showing characteristic comb-like caudal fin and filamentous extensions" ;
+    :morphologyNotes "Named 'Ceylonese Combtail' for its distinctive comb-like caudal fin" ;
+    :specificLocations "Kalu Ganga basin, Kelani Ganga basin, Mahaweli Ganga basin" ;
+    :riverBasins "Kalu, Kelani, Mahaweli" ;
+    :districts "Kalutara, Colombo, Gampaha, Kegalle, Ratnapura, Kandy, Matale" ;
+    :protectedAreas "Sinharaja Forest Reserve, Peak Wilderness Sanctuary, Knuckles Forest Reserve" ;
+    :observationSites "Kalu Ganga tributaries near Kalutara, Kelani Ganga tributaries near Avissawella, Mahaweli Ganga tributaries near Kandy" ;
+    :habitatType "Slow-moving forest streams and pools" ;
+    :altitudeRange "50-700 meters above sea level" ;
+    :waterConditions "pH 6.0-6.8, temperature 22-28°C, slow flow, can tolerate low oxygen" ;
+    :speciesDescription "Thal Kossa (Belontia signata), also known as the Ceylonese Combtail, is a vulnerable freshwater fish endemic to Sri Lanka, distinguished by its comb-like caudal fin and filamentous extensions. This species has a laterally compressed, deep body with a brown to olive base coloration and dark vertical bars. Males are larger with more elaborate fin extensions and develop enhanced coloration during breeding season. The fish can grow up to 12.0 cm, making it one of the larger endemic species, and inhabits slow-moving forest streams and pools in the Kalu, Kelani, and Mahaweli river basins. It can be found in districts including Kalutara, Colombo, and Kandy, often in protected areas like Sinharaja Forest Reserve and Peak Wilderness Sanctuary. Thal Kossa is unique among the endemic species for its labyrinth organ, which allows it to breathe air and survive in poorly oxygenated water. The species is known for its aggressive behavior, especially in dominant males, and is territorial. It faces threats from habitat destruction and is classified as Vulnerable by the IUCN. The species is named 'Ceylonese Combtail' for its distinctive comb-like caudal fin with filamentous extensions.".
+
+uberon:0011210 rdf:type owl:NamedIndividual ;
+    rdfs:label "Labyrinth organ" ;
+    obo:RO_0002215 go:0035987.
+
+go:0035987 rdf:type owl:NamedIndividual ;
+    rdfs:label "Air breathing" ;
+    obo:RO_0004028 "Survival in poorly oxygenated water".
+
+pato:0000620 rdf:type owl:NamedIndividual ;
+    rdfs:label "Aggressive behavior in B. signata" ;
+    obo:RO_0002573 "Territorial, especially dominant males".
