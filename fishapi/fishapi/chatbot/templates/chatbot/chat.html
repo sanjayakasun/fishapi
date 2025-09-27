@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Cache-Control"
+      content="no-cache, no-store, must-revalidate"
+    />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>Sri Lankan Fish Chatbot</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        --secondary-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        --accent-color: #667eea;
+        --text-primary: #2d3748;
+        --text-secondary: #718096;
+        --bg-primary: #ffffff;
+        --bg-secondary: #f7fafc;
+        --border-color: #e2e8f0;
+        --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1),
+          0 1px 2px 0 rgba(0, 0, 0, 0.06);
+        --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+          0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+          0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        --radius-sm: 8px;
+        --radius-md: 12px;
+        --radius-lg: 16px;
+        --radius-xl: 24px;
+      }
+
+      body {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, sans-serif;
+        background: var(--primary-gradient);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+      }
+
+      .chat-container {
+        width: 90%;
+        max-width: 900px;
+        height: 85vh;
+        background: var(--bg-primary);
+        border-radius: var(--radius-xl);
+        box-shadow: var(--shadow-xl);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        animation: slideIn 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateY(30px) scale(0.95);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      .chat-header {
+        background: var(--secondary-gradient);
+        color: white;
+        padding: 24px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .chat-header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          45deg,
+          transparent 30%,
+          rgba(255, 255, 255, 0.1) 50%,
+          transparent 70%
+        );
+        animation: shimmer 3s infinite;
+      }
+
+      @keyframes shimmer {
+        0% {
+          transform: translateX(-100%);
+        }
+        100% {
+          transform: translateX(100%);
+        }
+      }
+
+      .chat-header h1 {
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 8px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .chat-header p {
+        opacity: 0.95;
+        font-size: 16px;
+        font-weight: 400;
+        position: relative;
+        z-index: 1;
+      }
+
+      .fish-icon {
+        position: absolute;
+        top: 20px;
+        right: 24px;
+        font-size: 36px;
+        animation: float 3s ease-in-out infinite;
+        z-index: 1;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      .chat-messages {
+        flex: 1;
+        padding: 24px;
+        overflow-y: auto;
+        background: var(--bg-secondary);
+        scroll-behavior: smooth;
+      }
+
+      .chat-messages::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      .chat-messages::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      .chat-messages::-webkit-scrollbar-thumb {
+        background: var(--border-color);
+        border-radius: 3px;
+      }
+
+      .chat-messages::-webkit-scrollbar-thumb:hover {
+        background: var(--text-secondary);
+      }
+
+      .message {
+        margin-bottom: 20px;
+        display: flex;
+        align-items: flex-start;
+        animation: messageSlide 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      @keyframes messageSlide {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .message.user {
+        justify-content: flex-end;
+      }
+
+      .message-content {
+        max-width: 75%;
+        padding: 16px 20px;
+        border-radius: var(--radius-lg);
+        word-wrap: break-word;
+        position: relative;
+        font-size: 15px;
+        line-height: 1.6;
+      }
+
+      .message.user .message-content {
+        background: var(--primary-gradient);
+        color: white;
+        border-bottom-right-radius: var(--radius-sm);
+        box-shadow: var(--shadow-md);
+      }
+
+      .message.assistant .message-content {
+        background: var(--bg-primary);
+        color: var(--text-primary);
+        border: 1px solid var(--border-color);
+        border-bottom-left-radius: var(--radius-sm);
+        box-shadow: var(--shadow-sm);
+      }
+
+      .message.assistant .message-content strong {
+        color: var(--text-primary);
+        font-weight: 600;
+      }
+
+      .message.assistant .message-content br {
+        margin: 4px 0;
+      }
+
+      .section-header {
+        margin: 16px 0 8px 0;
+        padding: 8px 0 4px 0;
+        border-bottom: 2px solid var(--accent-color);
+        font-weight: 600;
+        color: var(--accent-color);
+        font-size: 16px;
+      }
+
+      .section-header:first-child {
+        margin-top: 0;
+      }
+
+      .bullet-point {
+        margin: 6px 0;
+        padding-left: 12px;
+        color: var(--text-secondary);
+        position: relative;
+      }
+
+      .bullet-point::before {
+        content: "•";
+        color: var(--accent-color);
+        font-weight: bold;
+        position: absolute;
+        left: 0;
+      }
+
+      .bullet-point strong {
+        color: var(--text-primary);
+        font-weight: 600;
+      }
+
+      .message-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin: 0 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        box-shadow: var(--shadow-sm);
+        flex-shrink: 0;
+      }
+
+      .message.user .message-avatar {
+        background: var(--primary-gradient);
+        color: white;
+        order: 1;
+      }
+
+      .message.assistant .message-avatar {
+        background: var(--secondary-gradient);
+        color: white;
+      }
+
+      .chat-input-container {
+        padding: 24px;
+        background: var(--bg-primary);
+        border-top: 1px solid var(--border-color);
+        position: relative;
+      }
+
+      .chat-input-form {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+
+      .chat-input {
+        flex: 1;
+        padding: 16px 20px;
+        border: 2px solid var(--border-color);
+        border-radius: var(--radius-xl);
+        outline: none;
+        font-size: 15px;
+        font-family: inherit;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        background: var(--bg-secondary);
+      }
+
+      .chat-input:focus {
+        border-color: var(--accent-color);
+        background: var(--bg-primary);
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        transform: translateY(-1px);
+      }
+
+      .send-button {
+        padding: 16px 24px;
+        background: var(--primary-gradient);
+        color: white;
+        border: none;
+        border-radius: var(--radius-xl);
+        cursor: pointer;
+        font-size: 15px;
+        font-weight: 600;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        box-shadow: var(--shadow-md);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .send-button::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
+        transition: left 0.5s;
+      }
+
+      .send-button:hover::before {
+        left: 100%;
+      }
+
+      .send-button:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .send-button:active {
+        transform: translateY(0);
+      }
+
+      .send-button:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        transform: none;
+        box-shadow: var(--shadow-sm);
+      }
+
+      .typing-indicator {
+        display: none;
+        padding: 16px 20px;
+        background: var(--bg-primary);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-lg);
+        border-bottom-left-radius: var(--radius-sm);
+        margin-bottom: 20px;
+        max-width: 75%;
+        box-shadow: var(--shadow-sm);
+        animation: messageSlide 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .typing-dots {
+        display: flex;
+        gap: 6px;
+        align-items: center;
+      }
+
+      .typing-dot {
+        width: 10px;
+        height: 10px;
+        background: var(--accent-color);
+        border-radius: 50%;
+        animation: typing 1.4s infinite ease-in-out;
+      }
+
+      .typing-dot:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+
+      .typing-dot:nth-child(3) {
+        animation-delay: 0.4s;
+      }
+
+      @keyframes typing {
+        0%,
+        60%,
+        100% {
+          transform: translateY(0) scale(1);
+          opacity: 0.7;
+        }
+        30% {
+          transform: translateY(-12px) scale(1.2);
+          opacity: 1;
+        }
+      }
+
+      .welcome-message {
+        text-align: center;
+        color: var(--text-secondary);
+        margin: 24px 0;
+        padding: 32px 24px;
+        background: var(--bg-primary);
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--border-color);
+        box-shadow: var(--shadow-sm);
+        animation: messageSlide 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .welcome-message h3 {
+        color: var(--text-primary);
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 12px;
+      }
+
+      .welcome-message p {
+        font-size: 15px;
+        margin-bottom: 20px;
+      }
+
+      .species-suggestions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 20px;
+        justify-content: center;
+      }
+
+      .species-tag {
+        padding: 8px 16px;
+        background: var(--bg-secondary);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-xl);
+        font-size: 13px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        color: var(--text-primary);
+      }
+
+      .species-tag:hover {
+        background: var(--accent-color);
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-md);
+        border-color: var(--accent-color);
+      }
+
+      .error-message {
+        background: linear-gradient(135deg, #fed7d7 0%, #feb2b2 100%);
+        color: #c53030;
+        padding: 16px 20px;
+        border-radius: var(--radius-md);
+        margin: 16px 0;
+        border: 1px solid #f56565;
+        font-weight: 500;
+      }
+
+      .premium-features {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        display: flex;
+        gap: 8px;
+      }
+
+      .premium-badge {
+        padding: 6px 12px;
+        background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+        color: #744210;
+        border-radius: var(--radius-md);
+        font-size: 12px;
+        font-weight: 600;
+        box-shadow: var(--shadow-sm);
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .chat-container {
+          width: 95%;
+          height: 90vh;
+          border-radius: var(--radius-lg);
+        }
+
+        .message-content {
+          max-width: 85%;
+          font-size: 14px;
+          padding: 12px 16px;
+        }
+
+        .chat-header {
+          padding: 20px;
+        }
+
+        .chat-header h1 {
+          font-size: 24px;
+        }
+
+        .chat-messages {
+          padding: 20px;
+        }
+
+        .chat-input-container {
+          padding: 20px;
+        }
+
+        .species-suggestions {
+          justify-content: flex-start;
+        }
+
+        .species-tag {
+          font-size: 12px;
+          padding: 6px 12px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .chat-container {
+          width: 100%;
+          height: 100vh;
+          border-radius: 0;
+        }
+
+        .message-content {
+          max-width: 90%;
+        }
+
+        .message-avatar {
+          width: 32px;
+          height: 32px;
+          font-size: 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="chat-container">
+      <div class="chat-header">
+        <!-- <div class="premium-features">
+          <div class="premium-badge">✨ Premium AI</div>
+          <div class="premium-badge">🎯 Expert Knowledge</div>
+        </div> -->
+        <div class="fish-icon">🐠</div>
+        <h1>Sri Lankan Fish Chatbot</h1>
+        <p>Ask me about endemic freshwater fish species of Sri Lanka</p>
+      </div>
+
+      <div class="chat-messages" id="chatMessages">
+        <div class="welcome-message">
+          <h3>Welcome! 🐠</h3>
+          <p>
+            I can help you learn about Sri Lankan endemic freshwater fish
+            species. Try asking about:
+          </p>
+          <div class="species-suggestions">
+            <span class="species-tag" onclick="askAboutSpecies('Bulath Hapaya')"
+              >Bulath Hapaya</span
+            >
+            <span
+              class="species-tag"
+              onclick="askAboutSpecies('Dankuda Pethiya')"
+              >Dankuda Pethiya</span
+            >
+            <span class="species-tag" onclick="askAboutSpecies('Depulliya')"
+              >Depulliya</span
+            >
+            <span
+              class="species-tag"
+              onclick="askAboutSpecies('Halamal Dandiya')"
+              >Halamal Dandiya</span
+            >
+            <span class="species-tag" onclick="askAboutSpecies('Lethiththaya')"
+              >Lethiththaya</span
+            >
+            <span
+              class="species-tag"
+              onclick="askAboutSpecies('Pathirana Salaya')"
+              >Pathirana Salaya</span
+            >
+            <span class="species-tag" onclick="askAboutSpecies('Thal Kossa')"
+              >Thal Kossa</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="typing-indicator" id="typingIndicator">
+        <div class="typing-dots">
+          <div class="typing-dot"></div>
+          <div class="typing-dot"></div>
+          <div class="typing-dot"></div>
+        </div>
+      </div>
+
+      <div class="chat-input-container">
+        <form class="chat-input-form" id="chatForm">
+          <input
+            type="text"
+            class="chat-input"
+            id="chatInput"
+            placeholder="Ask me about Sri Lankan fish..."
+            autocomplete="off"
+          />
+          <button type="submit" class="send-button" id="sendButton">
+            Send
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      let sessionId = null;
+      const chatMessages = document.getElementById("chatMessages");
+      const chatForm = document.getElementById("chatForm");
+      const chatInput = document.getElementById("chatInput");
+      const sendButton = document.getElementById("sendButton");
+      const typingIndicator = document.getElementById("typingIndicator");
+
+      // Generate session ID if not exists
+      if (!sessionId) {
+        sessionId =
+          "session_" +
+          Date.now() +
+          "_" +
+          Math.random().toString(36).substr(2, 9);
+      }
+
+      chatForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const message = chatInput.value.trim();
+        if (!message) return;
+
+        // Add user message to chat
+        addMessage("user", message);
+        chatInput.value = "";
+        sendButton.disabled = true;
+        showTypingIndicator();
+
+        try {
+          console.log("Sending request to: /chatbot/api/chat/");
+          const response = await fetch("/chatbot/api/chat/?v=" + Date.now(), {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              message: message,
+              session_id: sessionId,
+            }),
+          });
+
+          console.log("Response status:", response.status);
+
+          const data = await response.json();
+
+          if (response.ok) {
+            hideTypingIndicator();
+            addMessage("assistant", data.response);
+          } else {
+            hideTypingIndicator();
+            addMessage(
+              "assistant",
+              "Sorry, I encountered an error. Please try again."
+            );
+          }
+        } catch (error) {
+          hideTypingIndicator();
+          addMessage(
+            "assistant",
+            "Sorry, I encountered an error. Please try again."
+          );
+        } finally {
+          sendButton.disabled = false;
+          chatInput.focus();
+        }
+      });
+
+      function addMessage(role, content) {
+        const messageDiv = document.createElement("div");
+        messageDiv.className = `message ${role}`;
+
+        const avatar = document.createElement("div");
+        avatar.className = "message-avatar";
+        avatar.textContent = role === "user" ? "👤" : "🐠";
+
+        const messageContent = document.createElement("div");
+        messageContent.className = "message-content";
+
+        // Enhanced content formatting for better presentation
+        let formattedContent = content
+          // Handle section headers with colons (### format)
+          .replace(
+            /^###\s*(.+)$/gm,
+            "<div class='section-header'><strong>$1</strong></div>"
+          )
+          // Handle bold headers without colons
+          .replace(
+            /\*\*([^:]+):\*\*/g,
+            "<div class='section-header'><strong>$1:</strong></div>"
+          )
+          // Handle other bold text
+          .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
+          // Handle italic text
+          .replace(/\*([^*]+)\*/g, "<em>$1</em>")
+          // Handle bullet points with proper formatting
+          .replace(/^\*\s*(.+)$/gm, "<div class='bullet-point'>$1</div>")
+          // Handle numbered lists
+          .replace(
+            /^(\d+)\.\s*(.+)$/gm,
+            "<div class='bullet-point'><strong>$1.</strong> $2</div>"
+          )
+          // Handle line breaks
+          .replace(/\n\n/g, "<br><br>")
+          .replace(/\n/g, "<br>")
+          // Clean up extra breaks
+          .replace(/^<br>/, "")
+          .replace(/<br>$/, "");
+
+        messageContent.innerHTML = formattedContent;
+
+        if (role === "user") {
+          messageDiv.appendChild(messageContent);
+          messageDiv.appendChild(avatar);
+        } else {
+          messageDiv.appendChild(avatar);
+          messageDiv.appendChild(messageContent);
+        }
+
+        chatMessages.appendChild(messageDiv);
+
+        // Smooth scroll to bottom
+        setTimeout(() => {
+          chatMessages.scrollTo({
+            top: chatMessages.scrollHeight,
+            behavior: "smooth",
+          });
+        }, 100);
+      }
+
+      function showTypingIndicator() {
+        typingIndicator.style.display = "block";
+        setTimeout(() => {
+          chatMessages.scrollTo({
+            top: chatMessages.scrollHeight,
+            behavior: "smooth",
+          });
+        }, 100);
+      }
+
+      function hideTypingIndicator() {
+        typingIndicator.style.display = "none";
+      }
+
+      // Add typing effect for better UX
+      function typeMessage(element, text, speed = 30) {
+        element.innerHTML = "";
+        let i = 0;
+        const timer = setInterval(() => {
+          if (i < text.length) {
+            element.innerHTML += text.charAt(i);
+            i++;
+            chatMessages.scrollTo({
+              top: chatMessages.scrollHeight,
+              behavior: "smooth",
+            });
+          } else {
+            clearInterval(timer);
+          }
+        }, speed);
+      }
+
+      function askAboutSpecies(speciesName) {
+        chatInput.value = `Tell me about ${speciesName}`;
+        chatForm.dispatchEvent(new Event("submit"));
+      }
+
+      function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== "") {
+          const cookies = document.cookie.split(";");
+          for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            if (cookie.substring(0, name.length + 1) === name + "=") {
+              cookieValue = decodeURIComponent(
+                cookie.substring(name.length + 1)
+              );
+              break;
+            }
+          }
+        }
+        return cookieValue;
+      }
+
+      // Focus input on load
+      chatInput.focus();
+    </script>
+  </body>
+</html>

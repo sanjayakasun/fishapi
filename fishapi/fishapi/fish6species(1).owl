@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+  xmlns:fish="http://www.freshwaterfish.org/ontology#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+>
+  <fish:FishSpecies rdf:about="http://www.freshwaterfish.org/ontology#Puntius_titteya">
+    <fish:Fish rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Puntius titteya</fish:Fish>
+    <fish:ScientificName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Puntius titteya</fish:ScientificName>
+    <fish:Authority rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Puntius titteya (Deraniyagala, 1929)</fish:Authority>
+    <fish:SinhalaName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">le titteya</fish:SinhalaName>
+    <fish:CommonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cherry barb</fish:CommonName>
+    <fish:ColourMorphsVariants rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Detailed descriptions of the "neon" and "ruby" color varieties. Sexual color differences</fish:ColourMorphsVariants>
+    <fish:EcologyBehavior rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Habitat preferences related to vegetation and water flow</fish:EcologyBehavior>
+    <fish:MorphologyDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cherry Barb has an elongated body with a pair of maxillary barbels. Information about color variations ("neon" and "ruby" variants) Description of coloration patterns (horizontal line, fin colors) Sexual dimorphism details (males vs. females)</fish:MorphologyDescription>
+    <fish:Order rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cypriniformes</fish:Order>
+    <fish:Family rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cyprinidae</fish:Family>
+    <fish:Subfamily rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Smiliogastrinae</fish:Subfamily>
+    <fish:Habitat rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Recorded from shaded, slow flowing shallow streams with a muddy and leaf litter substratum. "Prefers areas with submerged aquatic vegetation</fish:Habitat>
+    <fish:PHRange rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6.0 - 8.0</fish:PHRange>
+    <fish:DHRange rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.0-19</fish:DHRange>
+    <fish:TemperatureRange rdf:datatype="http://www.w3.org/2001/XMLSchema#string">23°C - 27°C</fish:TemperatureRange>
+    <fish:Latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8°N - 6°N</fish:Latitude>
+    <fish:Region rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Asia</fish:Region>
+    <fish:Countries rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sri Lanka</fish:Countries>
+    <fish:SpecificLocation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kelani to Nilwala basins</fish:SpecificLocation>
+    <fish:StatusNotes rdf:datatype="http://www.w3.org/2001/XMLSchema#string">More colorful varieties are possibly being overfished for the aquarium trade</fish:StatusNotes>
+    <fish:MaximumLengthCm rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.0 cm TL (male/unsexed</fish:MaximumLengthCm>
+    <fish:CommonLengthCm rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2.5 cm TL</fish:CommonLengthCm>
+    <fish:Maturity rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Unknown</fish:Maturity>
+    <fish:Distribution rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reference to Nilwala and Gin basins (for the "Ruby" colored form)</fish:Distribution>
+    <fish:HabitatDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Recorded from shaded, slow flowing shallow streams with a muddy and leaf litter substratum." "Prefers areas with submerged aquatic vegetation.</fish:HabitatDescription>
+    <fish:Diet rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Omnivorous (detritus, green algae, diatoms, dipterans, and animal matter)</fish:Diet>
+    <fish:Reproduction rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Eggs: ~200 eggs scattered among marginal plants</fish:Reproduction>
+    <fish:FreeSwimmingAfter rdf:datatype="http://www.w3.org/2001/XMLSchema#string">48 hours</fish:FreeSwimmingAfter>
+    <fish:Hatching rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1-2 days</fish:Hatching>
+    <fish:AquariumGroupSize rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5 or more</fish:AquariumGroupSize>
+    <fish:AquariumMinimumTankSizeCm rdf:datatype="http://www.w3.org/2001/XMLSchema#string">60 cm</fish:AquariumMinimumTankSizeCm>
+    <fish:IUCNStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vulnerable (VU)</fish:IUCNStatus>
+    <fish:ThreatToHumans rdf:datatype="http://www.w3.org/2001/XMLSchema#string">harmless</fish:ThreatToHumans>
+    <fish:FisheriesValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">highly commercial in aquarium trade</fish:FisheriesValue>
+  </fish:FishSpecies>
+  <fish:FishSpecies rdf:about="http://www.freshwaterfish.org/ontology#Devario_pathirana">
+    <fish:Fish rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Devario pathirana</fish:Fish>
+    <fish:ScientificName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Devario pathirana</fish:ScientificName>
+    <fish:Authority rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kottelat &amp; Pethiyagoda, 1990</fish:Authority>
+    <fish:SinhalaName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pathirana saalaya</fish:SinhalaName>
+    <fish:CommonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Barred Danio,Sri Lanka Barred Danio</fish:CommonName>
+    <fish:ColourMorphsVariants rdf:datatype="http://www.w3.org/2001/XMLSchema#string">No known variants; consistent metallic blue bars on a golden background.</fish:ColourMorphsVariants>
+    <fish:EcologyBehavior rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Non-migratory, forms small groups (3-5 individuals), moves near the surface, more sedentary than Devario malabaricus.</fish:EcologyBehavior>
+    <fish:MorphologyDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Compressed body, dorsally greenish-brown, lighter laterally with metallic blue bars on a golden background, silvery-white ventral side. Transparent fins with a yellow tint; caudal fin with dark rays forming a horizontal black band.</fish:MorphologyDescription>
+    <fish:Order rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cypriniformes</fish:Order>
+    <fish:Family rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Danionidae</fish:Family>
+    <fish:Subfamily rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Danioninae</fish:Subfamily>
+    <fish:Etymology rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"Devario" originates from the Bengali word ‘debari.’ Named after Ananda ‘Andy’ Pathirana, a Sri Lankan aquarium-fish breeder and exporter.</fish:Etymology>
+    <fish:Habitat rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Freshwater, prefers still pools over fast-flowing areas.</fish:Habitat>
+    <fish:TemperatureRange rdf:datatype="http://www.w3.org/2001/XMLSchema#string">22°C - 25°C</fish:TemperatureRange>
+    <fish:Latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7°N - 6°N</fish:Latitude>
+    <fish:Region rdf:datatype="http://www.w3.org/2001/XMLSchema#string">South Asia</fish:Region>
+    <fish:Countries rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sri Lanka</fish:Countries>
+    <fish:SpecificLocation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nilwala River basin, including Opatha, Mawarala, Dediyagala, Pitabeddara, and Kamburupitiya.</fish:SpecificLocation>
+    <fish:StatusNotes rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Endemic species with a limited distribution, threatened due to habitat degradation.</fish:StatusNotes>
+    <fish:MaximumLengthCm rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6.0 cm SL</fish:MaximumLengthCm>
+    <fish:CommonLengthCm rdf:datatype="http://www.w3.org/2001/XMLSchema#string">~5-6 cm SL</fish:CommonLengthCm>
+    <fish:Distribution rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Endemic to Sri Lanka, previously thought to be restricted to Opatha but later found in other areas within the Nilwala River basin.</fish:Distribution>
+    <fish:HabitatDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Found in clear, shaded streams with rocky or pebble substrate, prefers still pools rather than fast currents. Avoids silted rivulets.</fish:HabitatDescription>
+    <fish:Diet rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Likely feeds on insects.</fish:Diet>
+    <fish:AquariumGroupSize rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Prefers small groups (3-5 individuals).</fish:AquariumGroupSize>
+    <fish:IUCNStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Endangered (EN) – IUCN Red List (2019)</fish:IUCNStatus>
+    <fish:ThreatToHumans rdf:datatype="http://www.w3.org/2001/XMLSchema#string">harmless</fish:ThreatToHumans>
+    <fish:FisheriesValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Occasionally exported in the aquarium trade, but collection is limited due to conservation concerns.</fish:FisheriesValue>
+  </fish:FishSpecies>
+  <owl:DatatypeProperty rdf:about="http://www.freshwaterfish.org/ontology#StatusNotes">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">StatusNotes</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.freshwaterfish.org/ontology#FishSpecies"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.freshwaterfish.org/ontology#PHRange">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PHRange</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.freshwaterfish.org/ontology#FishSpecies"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.freshwaterfish.org/ontology#Authority">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Authority</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.freshwaterfish.org/ontology#FishSpecies"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.freshwaterfish.org/ontology#CommonName">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CommonName</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.freshwaterfish.org/ontology#FishSpecies"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <fish:FishSpecies rdf:about="http://www.freshwaterfish.org/ontology#Dawkinsia_srilankensis">
+    <fish:Fish rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dawkinsia srilankensis</fish:Fish>
+    <fish:ScientificName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dawkinsia srilankensis</fish:ScientificName>
+    <fish:Authority rdf:datatype="http://www.w3.org/2001/XMLSchema#string">(Senanayake, 1985)</fish:Authority>
+    <fish:SinhalaName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mal Pethiya</fish:SinhalaName>
+    <fish:CommonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sri Lanka Blotched Filamented Barb, Blotched Filamented Barb</fish:CommonName>
+    <fish:ColourMorphsVariants rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pinkish yellow to pink in color. Dorsally darker than lateral sides. Three distinct black blotches present laterally on middle of body (at medial, anal fin base and caudal peduncle). Black spot present on base of dorsal fin. Upper and lower margins of caudal fin are black with reddish black tips.</fish:ColourMorphsVariants>
+    <fish:EcologyBehavior rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mid-water fish. Prefers rapidly flowing water with pebbly substrate. Clearly defined territory. Forms loose schools of individuals of similar size.</fish:EcologyBehavior>
+    <fish:MorphologyDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Slightly elongated body with terminal mouth, no barbels. Three distinct black blotches laterally. Black spot on dorsal fin base. Matured males have filamentous dorsal fin with 3 rays. Juveniles have four black cross bars, which fade into three existing blotches. Can grow up to 10 cm in length. Distinguished from other Puntius species by prominent black markings on body before anal-fin origin. Differs from P. exclamatio (lacks tear-shaped black blotch above anal fin). Differs from P. arulius and P. tambraparniei (has inferior mouth and absent lower lip medially).</fish:MorphologyDescription>
+    <fish:Order rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cypriniformes</fish:Order>
+    <fish:Family rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cyprinidae</fish:Family>
+    <fish:Subfamily rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Smiliogastrinae</fish:Subfamily>
+    <fish:Etymology rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Named after Richard Dawkins for his contributions to evolutionary science. Dr. Clinton Richard Dawkins (b. 1941) was a Professor for Public Understanding of Science at Oxford University.</fish:Etymology>
+    <fish:Habitat rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Freshwater; benthopelagic; tropical. Prefers fast flowing streams and rivulets with sandy substrate. Recently recorded from irrigation canals connected to upper reaches of Kalu River.</fish:Habitat>
+    <fish:Region rdf:datatype="http://www.w3.org/2001/XMLSchema#string">South Asia</fish:Region>
+    <fish:Countries rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sri Lanka</fish:Countries>
+    <fish:SpecificLocation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Knuckles area (Pallegama, Meemure, Reverston, Gammaduwa, Raththota); recently extending range toward dry zone (Elahara, Bakamuna, Hasalaka). Eastern slopes of Knuckles Hills, Kalu River at Pallegama.</fish:SpecificLocation>
+    <fish:StatusNotes rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Protected by law; collection of wild population is restricted. Population threatened by siltation due to upstream gem mining.</fish:StatusNotes>
+    <fish:MaximumLengthCm rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10.0 cm TL</fish:MaximumLengthCm>
+    <fish:Distribution rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Endemic to Sri Lanka. Restricted to Knuckles area but recently extending range toward dry zone via Minipe canal. Elevation: 300-500 m.</fish:Distribution>
+    <fish:HabitatDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fast flowing streams and rivulets with sandy substrate. Prefers rapidly flowing water with pebbly substrate.</fish:HabitatDescription>
+    <fish:IUCNStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Endangered (EN); IUCN Red List Criteria: B1ab(iii)+2ab(iii); Date Assessed: 06 August 2019. Previous assessments: Local (2012): CR, Global (2014): CR</fish:IUCNStatus>
+    <fish:ThreatToHumans rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Harmless</fish:ThreatToHumans>
+    <fish:FisheriesValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">No commercial interest. Not used for human consumption. Large numbers exported in aquarium trade, though noted elsewhere as "not available in sufficient numbers for export.</fish:FisheriesValue>
+  </fish:FishSpecies>
+  <owl:DatatypeProperty rdf:about="http://www.freshwaterfish.org/ontology#Hatching">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hatching</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.freshwaterfish.org/ontology#FishSpecies"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <fish:FishSpecies rdf:about="http://www.freshwaterfish.org/ontology#Pethia_cumingii">
+    <fish:Fish rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pethia cumingii</fish:Fish>
+    <fish:ScientificName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pethia cumingii</fish:ScientificName>
+    <fish:Authority rdf:datatype="http://www.w3.org/2001/XMLSchema#string">(Günther, 1868)</fish:Authority>
+    <fish:SinhalaName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kahavaral Depulliya /Potaya</fish:SinhalaName>
+    <fish:CommonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cuming's Barb, Two spot barb</fish:CommonName>
+    <fish:ColourMorphsVariants rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dorsally olive green with golden tint. Laterally golden yellow, with silvery tint. Two color varieties noted: Yellow finned variety and Red finned variety. Some individuals may have black dots on dorsal, pelvic and anal fins. Females appear lighter than males.</fish:ColourMorphsVariants>
+    <fish:EcologyBehavior rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yellow finned variety usually occurs in flowing water and stays close to substrate. Red finned variety inhabits slow flowing waters of marshes in Kelani Valley foothills. Forms medium sized shoals. Population with strongly bifurcate caudal fin from introduced Mahaweli stock.</fish:EcologyBehavior>
+    <fish:MorphologyDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Laterally compressed body with two vertically elongated blotches - one above operculum and other on base of anal fin. Dark spots on base of lateral scales under dorsal fin, above pelvic fins give effect of darker area on body between two blotches. Pectoral, dorsal, anal and caudal fins tinted with yellow.</fish:MorphologyDescription>
+    <fish:Order rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cypriniformes</fish:Order>
+    <fish:Family rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cyprinidae</fish:Family>
+    <fish:Subfamily rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Smiliogastrinae</fish:Subfamily>
+    <fish:Etymology rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pethia is the generic vernacular name for small cyprinids in Sinhala. Named after Hugh Cuming (1791–1865), an English naturalist and conchologist, once described as the 'Prince of Collectors</fish:Etymology>
+    <fish:Habitat rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Freshwater; benthopelagic. Clear, shallow, slow flowing, shaded streams with marginal aquatic vegetation and sandy leaf litter substrata. Prefers tributaries over main rivers.</fish:Habitat>
+    <fish:PHRange rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.5 - 6.5</fish:PHRange>
+    <fish:DHRange rdf:datatype="http://www.w3.org/2001/XMLSchema#string">? - 15</fish:DHRange>
+    <fish:TemperatureRange rdf:datatype="http://www.w3.org/2001/XMLSchema#string">22°C - 27°C</fish:TemperatureRange>
+    <fish:Latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8°N - 6°N</fish:Latitude>
+    <fish:Region rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Asia</fish:Region>
+    <fish:Countries rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sri Lanka</fish:Countries>
+    <fish:SpecificLocation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">South western wet zo ne, from Kelani to Gin basins. Range extends north of the Kelani, into swamps around Gampaha (Attanagalu Oya) and northwards. Introduced into Perdeniya Gardens in Mahaweli basin and well established between Gampola and Ginigathena.</fish:SpecificLocation>
+    <fish:MaximumLengthCm rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.0 cm TL</fish:MaximumLengthCm>
+    <fish:Maturity rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3 cm</fish:Maturity>
+    <fish:Distribution rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Endemic to Sri Lanka. Occurs mainly at south western wet zone, from Kelani to Gin basins. Range extends north of Kelani.</fish:Distribution>
+    <fish:HabitatDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yellow finned variety in flowing water with substrate from sand to boulders. Red finned variety in slow flowing waters of marshes in Kelani Valley foothills, associated with mud or silt bottoms.</fish:HabitatDescription>
+    <fish:Diet rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Feeds on green algae, plankton and detritus</fish:Diet>
+    <fish:Reproduction rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Spawns during rainy season</fish:Reproduction>
+    <fish:IUCNStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Endangered (EN) (B1ab(iii,v)+2ab(iii,v)); Date assessed: 07 May 2020. Previous assessments: Local (2012): EN, Global (2014): LC</fish:IUCNStatus>
+    <fish:ThreatToHumans rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Harmless</fish:ThreatToHumans>
+    <fish:FisheriesValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fisheries: of no interest; aquarium: commercial</fish:FisheriesValue>
+  </fish:FishSpecies>
+  <fish:FishSpecies rdf:about="http://www.freshwaterfish.org/ontology#Belontia_signata">
+    <fish:Fish rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Belontia signata</fish:Fish>
+    <fish:ScientificName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Belontia signata</fish:ScientificName>
+    <fish:Authority rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Günther, 1861</fish:Authority>
+    <fish:SinhalaName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thalkossa</fish:SinhalaName>
+    <fish:CommonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ceylonese Combtail</fish:CommonName>
+    <fish:ColourMorphsVariants rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Several color varieties exist; the most common is reddish-brown dorsally, light orange ventrally with a blue tint. Dorsal, anal, and pelvic fins are bright red; caudal fin has a light blue margin. Juveniles have a dark spot at the base of the caudal fin.</fish:ColourMorphsVariants>
+    <fish:EcologyBehavior rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Territorial and usually solitary; juveniles form small groups (3-5 individuals). Inhabits slow-flowing, clear streams with pebble or sand substrates.</fish:EcologyBehavior>
+    <fish:MorphologyDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Compressed body with elongated, pointed dorsal and anal fins. First few rays of pelvic fins are filamented, and adult caudal fins also have filaments. Females have lighter colors and shorter fin filaments. Maximum length ~18 cm TL.</fish:MorphologyDescription>
+    <fish:Order rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anabantiformes</fish:Order>
+    <fish:Family rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Osphronemidae</fish:Family>
+    <fish:Subfamily rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Belontiinae</fish:Subfamily>
+    <fish:Etymology rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"Belontia" refers to the genus classification, related to its labyrinth fish nature.</fish:Etymology>
+    <fish:Habitat rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Freshwater, prefers slow-flowing, clear streams with sandy or rocky substrates. Found in shaded areas. Juveniles prefer aquatic vegetation.</fish:Habitat>
+    <fish:TemperatureRange rdf:datatype="http://www.w3.org/2001/XMLSchema#string">24°C - 28°C</fish:TemperatureRange>
+    <fish:Latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7°N - 6°N</fish:Latitude>
+    <fish:Region rdf:datatype="http://www.w3.org/2001/XMLSchema#string">South Asia</fish:Region>
+    <fish:Countries rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sri Lanka</fish:Countries>
+    <fish:SpecificLocation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">South-Western wet zone lowlands and mid-hills of Sri Lanka, including the Mahaweli, Kelani, and Kalu River basins. Recorded up to 800 m elevation; highest record at 1472 m in Peak Wilderness FR.</fish:SpecificLocation>
+    <fish:StatusNotes rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Threatened due to habitat destruction and over-exploitation for the aquarium trade. Bright-colored varieties are particularly vulnerable.</fish:StatusNotes>
+    <fish:MaximumLengthCm rdf:datatype="http://www.w3.org/2001/XMLSchema#string">18.0 cm TL</fish:MaximumLengthCm>
+    <fish:CommonLengthCm rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10.0 cm SL</fish:CommonLengthCm>
+    <fish:Distribution rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Found in south-western Sri Lanka, mainly in lowland wet zones and mid-hills.</fish:Distribution>
+    <fish:HabitatDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Slow-flowing, clear waters with rocky or sandy substrates, often in shaded areas. Juveniles found in moderate flow with aquatic vegetation.</fish:HabitatDescription>
+    <fish:Diet rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Feeds on terrestrial insects and detritus.</fish:Diet>
+    <fish:Reproduction rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Males build bubble nests under leaves, submerged rocks, or at the water surface.</fish:Reproduction>
+    <fish:Hatching rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Eggs hatch in 2-3 days after spawning.</fish:Hatching>
+    <fish:AquariumGroupSize rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Solitary or small groups preferred.</fish:AquariumGroupSize>
+    <fish:AquariumMinimumTankSizeCm rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Not well-documented, but a spacious tank is required due to territorial nature.</fish:AquariumMinimumTankSizeCm>
+    <fish:IUCNStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vulnerable (VU) – IUCN Red List (2019)</fish:IUCNStatus>
+    <fish:ThreatToHumans rdf:datatype="http://www.w3.org/2001/XMLSchema#string">harmless</fish:ThreatToHumans>
+    <fish:FisheriesValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Collected for the aquarium trade; brightly colored individuals are most sought after.</fish:FisheriesValue>
+  </fish:FishSpecies>
+  <owl:DatatypeProperty rdf:about="http://www.freshwaterfish.org/ontology#FisheriesValue">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FisheriesValue</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.freshwaterfish.org/ontology#FishSpecies"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.freshwaterfish.org/ontology#ThreatToHumans">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ThreatToHumans</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.freshwaterfish.org/ontology#FishSpecies"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.freshwaterfish.org/ontology#ScientificName">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ScientificName</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.freshwaterfish.org/ontology#FishSpecies"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.freshwaterfish.org/ontology#MorphologyDescription">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MorphologyDescription</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.freshwaterfish.org/ontology#FishSpecies"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.freshwaterfish.org/ontology#AquariumMinimumTankSizeCm">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AquariumMinimumTankSizeCm</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.freshwaterfish.org/ontology#FishSpecies"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.freshwaterfish.org/ontology#CommonLengthCm">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CommonLengthCm</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.freshwaterfish.org/ontology#FishSpecies"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <fish:FishSpecies rdf:about="http://www.freshwaterfish.org/ontology#Pethia_nigrofasciata">
+    <fish:Fish rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pethia nigrofasciata</fish:Fish>
+    <fish:ScientificName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pethia nigrofasciata</fish:ScientificName>
+    <fish:Authority rdf:datatype="http://www.w3.org/2001/XMLSchema#string">(Gunther, 1868)</fish:Authority>
+    <fish:SinhalaName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bulath Hapaya / Manamaalaya</fish:SinhalaName>
+    <fish:CommonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sri Lanka Black Ruby Barb, Black Ruby Barb</fish:CommonName>
+    <fish:ColourMorphsVariants rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dorsally olive green, becoming lighter with reddish orange tint that spreads across lateral side, turning yellowish white along ventral side. Head bright red. Two color varieties: red/orange caudal fin (commonest) and black/grey caudal fin. Red coloration not seen in females. Both sexes have black colored dorsal, pelvic and anal fins.</fish:ColourMorphsVariants>
+    <fish:EcologyBehavior rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Inhabits clear, cool, shady streams in forested areas. Sometimes found in pools of quiet water in margins of clear streams and rivers. Feeds mainly on filamentous algae and detritus.</fish:EcologyBehavior>
+    <fish:MorphologyDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Compressed body with three black vertical bands: one behind operculum, one between dorsal and pelvic fins, and one above anal fin. In breeding males, bands are thicker and darker, giving effect of completely black body. Pectoral fins transparent. Adults reach length of 5.25cm.</fish:MorphologyDescription>
+    <fish:Order rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cypriniformes</fish:Order>
+    <fish:Family rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cyprinidae</fish:Family>
+    <fish:Subfamily rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Smiliogastrinae</fish:Subfamily>
+    <fish:Etymology rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pethia is the generic vernacular name for small cyprinids in Sinhala.</fish:Etymology>
+    <fish:Habitat rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Freshwater; benthopelagic. Clear waters with rocky and sandy substrata, shallow, shaded, flowing streams. Prefers marginal aquatic vegetation.</fish:Habitat>
+    <fish:PHRange rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6.0 - 6.5</fish:PHRange>
+    <fish:DHRange rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.0-12</fish:DHRange>
+    <fish:TemperatureRange rdf:datatype="http://www.w3.org/2001/XMLSchema#string">22°C - 26°C</fish:TemperatureRange>
+    <fish:Latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8°N - 6°N</fish:Latitude>
+    <fish:Region rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Asia</fish:Region>
+    <fish:Countries rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sri Lanka</fish:Countries>
+    <fish:SpecificLocation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lowland wet zone of Southern and Western parts of country, from Kelani to Nilwala basins. Population in Ginigathena (Mahaweli River Basin) is a translocated population.</fish:SpecificLocation>
+    <fish:StatusNotes rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Brightly colored population introduced to Mahaweli at Ginigathena diminished in number due to aquarium export trade. Decline in population observed. Conservation measures recommended.</fish:StatusNotes>
+    <fish:MaximumLengthCm rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6.0 cm TL (male/unsexed); 6.7 cm TL (female)</fish:MaximumLengthCm>
+    <fish:Distribution rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Restricted to forest streams from Kelani to Nilwala basins in Sri Lanka. Occurs in hilly areas up to about 300 m elevation.</fish:Distribution>
+    <fish:HabitatDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Clear, cool, shady streams in forested areas, on gravel or sand substrate. Sometimes found in pools of quiet water in margins of clear streams and rivers.</fish:HabitatDescription>
+    <fish:Diet rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Feeds mainly on filamentous algae and detritus.</fish:Diet>
+    <fish:Reproduction rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bred in captivity. Spawns in shallow water among marginal weeds.</fish:Reproduction>
+    <fish:FreeSwimmingAfter rdf:datatype="http://www.w3.org/2001/XMLSchema#string">After 24 hours</fish:FreeSwimmingAfter>
+    <fish:Hatching rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Eggs (&gt;100) hatch in 1-2 days</fish:Hatching>
+    <fish:AquariumGroupSize rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Groups of 5 or more individuals</fish:AquariumGroupSize>
+    <fish:AquariumMinimumTankSizeCm rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Minimum Tank Size :80 cm</fish:AquariumMinimumTankSizeCm>
+    <fish:IUCNStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vulnerable (VU) (B1ab(iii,v)+2ab(iii,v)); Date assessed: 07 August 2019. Previous assessments: Local (2012): EN, Global (2014): LC</fish:IUCNStatus>
+    <fish:ThreatToHumans rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Harmless</fish:ThreatToHumans>
+    <fish:FisheriesValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fisheries: of no interest; aquarium: highly commercial. Popular aquarium fish. Among top five exported endemic species in Sri Lanka.</fish:FisheriesValue>
+  </fish:FishSpecies>
+  <owl:DatatypeProperty rdf:about="http://www.freshwaterfish.org/ontology#Region">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Region</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.freshwaterfish.org/ontology#FishSpecies"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.freshwaterfish.org/ontology#FreeSwimmingAfter">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FreeSwimmingAfter</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.freshwaterfish.org/ontology#FishSpecies"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.freshwaterfish.org/ontology#Distribution">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Distribution</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.freshwaterfish.org/ontology#FishSpecies"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.freshwaterfish.org/ontology#EcologyBehavior">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EcologyBehavior</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.freshwaterfish.org/ontology#FishSpecies"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.freshwaterfish.org/ontology#AquariumGroupSize">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AquariumGroupSize</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.freshwaterfish.org/ontology#FishSpecies"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.freshwaterfish.org/ontology#SinhalaName">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SinhalaName</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.freshwaterfish.org/ontology#FishSpecies"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.freshwaterfish.org/ontology#MaximumLengthCm">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MaximumLengthCm</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.freshwaterfish.org/ontology#FishSpecies"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.freshwaterfish.org/ontology#Subfamily">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Subfamily</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.freshwaterfish.org/ontology#FishSpecies"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.freshwaterfish.org/ontology#HabitatDescription">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HabitatDescription</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.freshwaterfish.org/ontology#FishSpecies"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.freshwaterfish.org/ontology#Family">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Family</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.freshwaterfish.org/ontology#FishSpecies"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.freshwaterfish.org/ontology#Countries">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Countries</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.freshwaterfish.org/ontology#FishSpecies"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.freshwaterfish.org/ontology#Order">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Order</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.freshwaterfish.org/ontology#FishSpecies"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.freshwaterfish.org/ontology#Fish">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fish</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.freshwaterfish.org/ontology#FishSpecies"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.freshwaterfish.org/ontology#ColourMorphsVariants">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ColourMorphsVariants</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.freshwaterfish.org/ontology#FishSpecies"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.freshwaterfish.org/ontology#Maturity">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Maturity</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.freshwaterfish.org/ontology#FishSpecies"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.freshwaterfish.org/ontology#Reproduction">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reproduction</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.freshwaterfish.org/ontology#FishSpecies"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.freshwaterfish.org/ontology#DHRange">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DHRange</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.freshwaterfish.org/ontology#FishSpecies"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.freshwaterfish.org/ontology#Habitat">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Habitat</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.freshwaterfish.org/ontology#FishSpecies"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.freshwaterfish.org/ontology#Diet">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Diet</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.freshwaterfish.org/ontology#FishSpecies"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.freshwaterfish.org/ontology#SpecificLocation">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SpecificLocation</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.freshwaterfish.org/ontology#FishSpecies"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:Ontology rdf:about="http://www.freshwaterfish.org/ontology"/>
+  <owl:DatatypeProperty rdf:about="http://www.freshwaterfish.org/ontology#Etymology">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Etymology</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.freshwaterfish.org/ontology#FishSpecies"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.freshwaterfish.org/ontology#Latitude">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Latitude</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.freshwaterfish.org/ontology#FishSpecies"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.freshwaterfish.org/ontology#TemperatureRange">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TemperatureRange</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.freshwaterfish.org/ontology#FishSpecies"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.freshwaterfish.org/ontology#IUCNStatus">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IUCNStatus</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.freshwaterfish.org/ontology#FishSpecies"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:Class rdf:about="http://www.freshwaterfish.org/ontology#FishSpecies">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FishSpecies</rdfs:label>
+  </owl:Class>
+</rdf:RDF>
